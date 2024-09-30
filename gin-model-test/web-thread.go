@@ -22,9 +22,9 @@ func WebThread() {
 
 		go func() {
 			index := atomic.AddInt64(&i, 1)
-			<-limiter
+			limiter <- struct{}{}
 			defer func() {
-				limiter <- struct{}{}
+				<-limiter
 			}()
 			// 模拟耗时操作
 			for j := 0; j < 3; j++ {
