@@ -1,4 +1,4 @@
-package ginmodeltest
+package main
 
 import (
 	"fmt"
@@ -59,4 +59,12 @@ func Request() {
 		fmt.Println("状态码:", resp.StatusCode)
 		fmt.Println("响应正文:", string(body))
 	}
+}
+
+func main() {
+	go func() {
+		time.Sleep(3 * time.Second)
+		Request()
+	}()
+	WebThread()
 }
