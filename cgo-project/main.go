@@ -10,7 +10,11 @@ func main() {
 	fmt.Println("=====================================")
 	test_case.StructTrans()
 	fmt.Println("=====================================")
-	test_case.StructTransWithCHeader()
+	/*
+		执行以下代码需要先将该的方法所需要的C文件通过注释中的指令编译
+		具体见该StructTransWithCHeader()方法的注释
+	*/
+	// test_case.StructTransWithCHeader()
 	fmt.Println("=====================================")
 	test_case.UnionTrans()
 }
